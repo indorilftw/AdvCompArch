@@ -19,11 +19,11 @@ con0.input "./mcf ./inp.in.mcf.train \n"
 
 #Load cache hierarcy parameters
 echo "Loading caches"
-run-command-file /home/indoril/simics-workspace/scripts/cache-hierarchy.simics
+run-command-file /home/indoril/simics-workspace/scripts/gzip/cache-hierarchy.simics
 #Continue simulation for 100,000,000 instructions to warm-up caches
 echo "Warming up caches"
 c 100_000_000
-$outputfile = ("RESULTS/mcf-64.8")
+$outputfile = ("gzip-64.8")
 output-file-start $outputfile
 #Reset statistics
 dc.reset-statistics
