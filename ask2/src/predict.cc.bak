@@ -37,7 +37,7 @@ int main (int argc, char *argv[]) {
 
     p[0] = new gshare_predictor();
     p[1] = new btb_predictor(512, 1);
-    p[2] = new nbit_predictor(7);
+    p[2] = new nbit_predictor(1);
 
     // some statistics to keep, currently just for conditional branches
 

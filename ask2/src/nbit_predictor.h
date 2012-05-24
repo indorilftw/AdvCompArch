@@ -11,7 +11,7 @@ public:
 
 class nbit_predictor : public branch_predictor {
 public:
-#define NBP_TABLE_BITS	15  //number of entries = 2^15
+#define NBP_TABLE_BITS 15  //number of entries = 2^15
 	nbit_update u;
 	branch_info bi;
 	int counter_limit;
