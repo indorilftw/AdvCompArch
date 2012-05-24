@@ -1,5 +1,5 @@
 // nbit_predictor.h
-// 
+//
 //
 
 #include <math.h>
@@ -19,7 +19,7 @@ public:
 
 	unsigned char tab[1<<NBP_TABLE_BITS];
 
-	nbit_predictor (int length) :N_COUNTER_LENGTH(length) { 
+	nbit_predictor (int length) :N_COUNTER_LENGTH(length) {
 		memset (tab, 0, sizeof (tab));
 		counter_limit = ((int) pow(2.0, N_COUNTER_LENGTH)) - 1;
 	}
@@ -40,9 +40,11 @@ public:
 		if (bi.br_flags & BR_CONDITIONAL) {
 			unsigned char *c = &tab[((nbit_update*)u)->index];
 			if (taken) {
-				if (*c < counter_limit) (*c)++;
+				if (*c < counter_limit)
+                    (*c)++;
 			} else {
-				if (*c > 0) (*c)--;
+				if (*c > 0)
+                    (*c)--;
 			}
 		}
 	}

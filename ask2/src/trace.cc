@@ -1,6 +1,6 @@
 // trace.cc
 // This file contains code for reading traces.  There's nothing in this
-// file you need to understand to participate in the branch prediction 
+// file you need to understand to participate in the branch prediction
 // contest.
 
 // djimenez
@@ -13,7 +13,7 @@
 #include "branch.h"
 #include "trace.h"
 
-// A trace is a piece of information about a branch.  The external 
+// A trace is a piece of information about a branch.  The external
 // representation of a trace is 9 bytes:
 // - A one byte "code."  The lower 4 bits are the x86 opcode for a
 // conditional branch (modulo 16).  The upper four bits are one of the
@@ -25,9 +25,9 @@
 // 5 : call
 // 6 : indirect call
 // 7 : return
-// - A four byte little-endian branch address.  This is the address in memory 
+// - A four byte little-endian branch address.  This is the address in memory
 // of the first byte of the branch instruction.
-// - A four byte little-endian branch target.  This is the address in memory 
+// - A four byte little-endian branch target.  This is the address in memory
 // where the branch jumped.
 //
 // The input file is usually compressed either with gzip or bzip2 and this
@@ -86,7 +86,7 @@ unsigned char read_byte (void) {
 		}
 	}
 
-	// one more byte 
+	// one more byte
 
 	return buf[bufpos++];
 }
@@ -105,13 +105,13 @@ unsigned int read_uint (void) {
 
 // these "remember" structs and functions handle decompressing certain traces
 // using prediction.  the compression is a simple table-based predictor that
-// also uses a return address stack for predicting return addresses.  
-// obviously this is a space win, but it is also a measurable performance 
+// also uses a return address stack for predicting return addresses.
+// obviously this is a space win, but it is also a measurable performance
 // win since there are fewer bytes to read.
 
 struct remember {
 	bool taken;
-	unsigned char code; 
+	unsigned char code;
 	unsigned int address, target;
 	unsigned int lru_time;
 
@@ -133,15 +133,15 @@ struct remember {
 		return
 		   r->code == code
 		&& r->taken == taken
-		&& r->address == address 
+		&& r->address == address
 		&& (ignore_target || r->target == target);
 	}
 };
 
 // a return address stack
-                                                                                
+
 #define RAS_SIZE        100
-                                                                                
+
 unsigned int ras[RAS_SIZE];
 int ras_top = RAS_SIZE;
 
@@ -180,11 +180,11 @@ remember rtab[N_REMEMBER][ASSOC];
 
 // this int keeps time for the LRU algorithm
 
-static unsigned int now = 0; 
+static unsigned int now = 0;
 
 // last trace seen
 
-static remember last_one; 
+static remember last_one;
 
 // predict a trace
 
@@ -217,7 +217,7 @@ trace *read_trace (void) {
 	bool ras_correct, ras_offby2, ras_offby3, correct;
 
 	// read the next byte; it will either be a code, a set index for
-	// a correct prediction, or a prefix for patching a return address 
+	// a correct prediction, or a prefix for patching a return address
 	// prediction.
 
 	unsigned char c = read_byte ();
@@ -238,7 +238,7 @@ trace *read_trace (void) {
 	if (c & 0x80) {
 		// then it means the return address predictor will be
 		// slightly off but we can patch the prediction to make
-		// it correct.  this happens sometimes (rarely) because of 
+		// it correct.  this happens sometimes (rarely) because of
 		// x86's variable-length call instructions.
 
 		if (c == 0x82)
@@ -267,7 +267,7 @@ trace *read_trace (void) {
 
 		// if the byte is at least 4 then it means that we have
 		// a correct return address prediction
-		
+
 		ras_correct = c >= ASSOC;
 
 		// subtract off ASSOC for a correct return address prediction
@@ -358,7 +358,7 @@ trace *read_trace (void) {
 			// flush the return address stack.  why are we
 			// bothering about predicting when we know the
 			// prediction is incorrect?  because the original
-			// compressor maintains a return address stack 
+			// compressor maintains a return address stack
 			// regardless of whether the trace is predicted
 			// correctly, so we have to also.
 
@@ -419,7 +419,7 @@ trace *read_trace (void) {
 #define BZIP2_MAGIC	"BZ"
 
 void init_trace (char *fname) {
-	char *dc;
+	const char *dc;
 	char s[2] = { 0, 0 };
 	char cmd[1000];
 
@@ -431,7 +431,7 @@ void init_trace (char *fname) {
 	}
 	fread (s, 1, 2, f);
 	fclose (f);
-	if (strncmp (s, GZIP_MAGIC, 2) == 0) 
+	if (strncmp (s, GZIP_MAGIC, 2) == 0)
 		dc = ZCAT;
 	else if (strncmp (s, BZIP2_MAGIC, 2) == 0)
 		dc = BZCAT;
