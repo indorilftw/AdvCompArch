@@ -1,4 +1,4 @@
-Advanced CompArch Course for NTUA.
+Advanced Computer Architecture Course for NTUA.
 
 [Course website] http://www.cslab.ece.ntua.gr/courses/advcomparch/info.go
 
@@ -7,7 +7,7 @@ Advanced CompArch Course for NTUA.
 
 (The MIT License)
 
-Copyright (c) 2012 Gregory "mastergreg" Liras
+Copyright (c) 2012 Vasilis "indorilftw" Gerakaris
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
