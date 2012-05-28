@@ -1,0 +1,30 @@
+164.gzip.trace
+1-bit_pred: 19.905 MPKI
+2-bit_pred: 15.028 MPKI
+4-bit_pred: 13.125 MPKI
+ 
+175.vpr.trace
+1-bit_pred: 16.711 MPKI
+2-bit_pred: 14.560 MPKI
+4-bit_pred: 14.262 MPKI
+ 
+181.mcf.trace
+1-bit_pred: 50.880 MPKI
+2-bit_pred: 33.207 MPKI
+4-bit_pred: 31.393 MPKI
+ 
+201.compress.trace
+1-bit_pred: 12.788 MPKI
+2-bit_pred: 9.132 MPKI
+4-bit_pred: 8.761 MPKI
+ 
+205.raytrace.trace
+1-bit_pred: 3.908 MPKI
+2-bit_pred: 3.136 MPKI
+4-bit_pred: 3.353 MPKI
+ 
+213.javac.trace
+1-bit_pred: 4.106 MPKI
+2-bit_pred: 2.748 MPKI
+4-bit_pred: 3.137 MPKI
+ 

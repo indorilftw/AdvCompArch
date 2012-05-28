@@ -1,0 +1,36 @@
+164.gzip.trace
+BTB_pred #1:	 2041421 d-misses	 83 t-misses
+BTB_pred #2:	 1995817 d-misses	 100 t-misses
+BTB_pred #3:	 1993177 d-misses	 101 t-misses
+BTB_pred #4:	 1992675 d-misses	 100 t-misses
+ 
+175.vpr.trace
+BTB_pred #1:	 2079836 d-misses	 79 t-misses
+BTB_pred #2:	 1893676 d-misses	 71 t-misses
+BTB_pred #3:	 1720298 d-misses	 91 t-misses
+BTB_pred #4:	 1677486 d-misses	 85 t-misses
+ 
+181.mcf.trace
+BTB_pred #1:	 5215689 d-misses	 80 t-misses
+BTB_pred #2:	 5138345 d-misses	 99 t-misses
+BTB_pred #3:	 5104248 d-misses	 98 t-misses
+BTB_pred #4:	 5090231 d-misses	 100 t-misses
+ 
+201.compress.trace
+BTB_pred #1:	 1481358 d-misses	 10480 t-misses
+BTB_pred #2:	 1379056 d-misses	 8912 t-misses
+BTB_pred #3:	 1341168 d-misses	 10582 t-misses
+BTB_pred #4:	 1324162 d-misses	 10592 t-misses
+ 
+205.raytrace.trace
+BTB_pred #1:	 2304375 d-misses	 118710 t-misses
+BTB_pred #2:	 1618908 d-misses	 120697 t-misses
+BTB_pred #3:	 1435765 d-misses	 123820 t-misses
+BTB_pred #4:	 1311035 d-misses	 125326 t-misses
+ 
+213.javac.trace
+BTB_pred #1:	 819139 d-misses	 25907 t-misses
+BTB_pred #2:	 637875 d-misses	 25211 t-misses
+BTB_pred #3:	 552267 d-misses	 27066 t-misses
+BTB_pred #4:	 519838 d-misses	 27247 t-misses
+ 
